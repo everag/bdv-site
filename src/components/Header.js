@@ -3,84 +3,115 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { layout } from '../utils/constants';
-import image from '../images/logo.png';
-import podcast from '../images/podcast.svg';
+import spotify from '../images/spotify-logo.png';
+import pocketCasts from '../images/pocket-casts-logo.png';
+import castbox from '../images/castbox-logo.png';
+import anchor from '../images/anchor-logo.png';
 
 export default () => (
   <header
     css={css`
-      background: #232121;
+      background: #020304;
       margin-bottom: 1.45rem;
     `}
   >
     <HeaderInner>
       <LogoContainer>
-        <Link to="/" css={css({ boxShadow: 'none' })}>
-          <Logo src={image} title="The Console Log" />
-        </Link>
         <Title>
-          <Link to="/">The Console Log</Link>
+          <Link to="/">Gueimers Podcast</Link>
         </Title>
       </LogoContainer>
       <Nav>
-        <Link to="/">Episodes</Link>
+        <Link to="/">Episódios</Link>
         <Bullet />
         <Link to="/episode/tags">Tags</Link>
         <Bullet />
         <a
-          href="https://twitter.com/_theconsolelog"
+          href="https://twitter.com/GueimersPod"
           rel="noopener noreferrer"
           target="_blank"
         >
           Twitter
         </a>
         <Bullet />
-        <NavItem>
-          Podcast
-          {'  '}
-          <img
-            src={podcast}
-            css={css`
-              max-width: inherit;
-              width: 24px;
-              height: 24px;
-              margin: 0;
-              margin-left: 5px;
-              margin-bottom: -5px;
-            `}
-          />
-        </NavItem>
-        {'  '}
         <a
-          href="https://itunes.apple.com/us/podcast/the-console-log/id1411181947"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          iTunes
-        </a>
-        <Bullet />
-        <a
-          href="https://play.google.com/music/listen#/ps/Ioyfudzgzrcnfpwcrisw7la7jnu"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Google Play
-        </a>
-        <Bullet />
-        <a
-          href="https://open.spotify.com/show/2SlPOIWzAphYdO5MkFFaKu"
+          href="https://open.spotify.com/show/15fzVVtEkHnvNn5VwAiKyo?si=OFNPGb2IQeup_C7fIHfC7Q"
           rel="noopener noreferrer"
           target="_blank"
         >
           Spotify
+          {'  '}
+          <img
+              src={spotify}
+              css={css`
+              max-width: inherit;
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              margin-left: 2px;
+              margin-bottom: -5px;
+            `}
+          />
         </a>
         <Bullet />
         <a
-          href="https://www.patreon.com/bePatron?u=9399313"
+          href="https://pca.st/rgMwqM"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Support Us!
+          Pocket Casts
+          {'  '}
+          <img
+              src={pocketCasts}
+              css={css`
+              max-width: inherit;
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              margin-left: 2px;
+              margin-bottom: -5px;
+            `}
+          />
+        </a>
+        <Bullet />
+        <a
+          href="https://castbox.fm/channel/Gueimers-id2663324?country=us"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Castbox
+          {'  '}
+          <img
+              src={castbox}
+              css={css`
+              max-width: inherit;
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              margin-left: 2px;
+              margin-bottom: -5px;
+            `}
+          />
+        </a>
+        <Bullet />
+        <a
+          href="https://anchor.fm/gueimers"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Outros agregadores
+          {'  '}
+          <img
+              src={anchor}
+              css={css`
+              max-width: inherit;
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              margin-left: 2px;
+              margin-bottom: -5px;
+            `}
+          />
         </a>
       </Nav>
     </HeaderInner>
@@ -90,7 +121,7 @@ export default () => (
 const HeaderInner = styled('div')`
   max-width: ${layout.width}px;
   margin: 0 auto;
-  padding: 1.45rem ${layout.paddingY};
+  padding: 1.75rem ${layout.paddingY} 1.45rem ${layout.paddingY};
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -110,32 +141,30 @@ const Logo = styled('img')`
 `;
 
 const Title = styled('h1')`
-  font-family: 'American Typewriter', monospace, serif;
+  font-family: 'Bangers', 'Press Start 2P', monospace, serif;
   font-weight: normal;
+  letter-spacing: 1px;
   margin: 0;
-  margin-left: 20px;
+  margin-bottom: 15px;
   a {
     box-shadow: none;
-    color: #fff;
+    color: #dde1e2;
     &:hover {
       box-shadow: inherit;
-      text-decoration: underline;
+      color: white;
     }
   }
 `;
 
 const Nav = styled('nav')`
   a {
-    color: #fff;
+    color: #dde1e2;
     box-shadow: none;
     &:hover {
       text-decoration: underline;
+      color: white;
     }
   }
-`;
-
-const NavItem = styled('span')`
-  color: #fff;
 `;
 
 const Bullet = () => (

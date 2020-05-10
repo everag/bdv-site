@@ -17,6 +17,19 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography.js',
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: 'Press Start 2P',
+          },
+          {
+            family: 'Bangers',
+          },
+        ],
+      },
+    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     {
