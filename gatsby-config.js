@@ -3,12 +3,14 @@ const { DateTime } = require('luxon');
 
 module.exports = {
   siteMetadata: {
-    title: 'The Console Log',
+    title: 'Gueimers Podcast',
     description:
-      'A weekly podcast about all the latest JavaScript and web news.',
-    siteUrl: 'http://theconsolelog.com',
-    iTunesLogo: 'https://theconsolelog.com/itunes-logo.jpeg',
-    keywords: 'podcast, javascript, news',
+        'Um podcast brasileiro sobre videogames, onde falamos tanto sobre jogos antigos quanto novos, ' +
+        'cobrimos praticamente todas as plataformas atuais, e contamos o que sentimos jogando, com bom ' +
+        'humor e (quase) sem favoritismos!',
+    siteUrl: 'http://gueimers.com.br',
+    iTunesLogo: '',
+    keywords: 'podcast, video-games, videogames, games, jogos',
   },
   plugins: [
     {
@@ -18,14 +20,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
         fonts: [
           {
-            family: 'Press Start 2P',
+            family: 'Bangers',
           },
           {
-            family: 'Bangers',
+            family: 'Press Start 2P',
           },
         ],
       },
@@ -121,16 +123,15 @@ module.exports = {
           {
             query: `
             {
-              allEpisodesJson(sort: {fields: [date___end], order: DESC}) {
+              allEpisodesJson(sort: {fields: [date___start], order: DESC}) {
                 edges {
                   node {
                     title
+                    description
+                    embedded
                     fields {
                       episodeNumber
                       slug
-                    }
-                    youtube {
-                      id
                     }
                     duration
                     content {
@@ -139,7 +140,6 @@ module.exports = {
                     }
                     date {
                       start
-                      end
                     }
                   }
                 }
@@ -157,7 +157,7 @@ module.exports = {
                   description: createDescription(node),
                   url: siteMetadata.siteUrl + node.fields.slug,
                   guid: siteMetadata.siteUrl + node.fields.slug,
-                  date: DateTime.fromISO(node.date.end)
+                  date: DateTime.fromISO(node.date.start)
                     // Have it be the next day at 8am, when we typically release
                     // the content.
                     .plus({ days: 1, hours: 8 })
@@ -211,9 +211,9 @@ function getYear(date) {
 const createDescription = node => {
   let description = `
 Episode ${node.fields.episodeNumber}.
-${formatDate(node.date.start)} - ${formatDate(node.date.end)}, ${getYear(
-    node.date.end
-  )}
+${formatDate(node.date.start)} - ${formatDate(node.date.start)}, ${getYear(
+  node.date.start
+)}
 
 SUPPORT OUR PATREON
 https://www.patreon.com/theconsolelog

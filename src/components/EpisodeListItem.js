@@ -12,7 +12,7 @@ export default ({
   return (
     <Container>
       <Dates>
-        {formatDate(date.start)} - {formatDate(date.end)}
+        {formatDate(date.start)}
       </Dates>
       {linked ? (
         <h3 className={titleCss}>
@@ -22,7 +22,7 @@ export default ({
         <h1 className={titleCss}>{title}</h1>
       )}
 
-      <Subtitle>Episode: {episodeNumber}</Subtitle>
+      <Subtitle>Episódio: {episodeNumber}</Subtitle>
     </Container>
   );
 };
@@ -44,5 +44,5 @@ const Subtitle = styled('span')`
 `;
 
 function formatDate(date) {
-  return DateTime.fromISO(date).toFormat('LLLL d');
+  return DateTime.fromISO(date).setLocale('pt-BR').toLocaleString(DateTime.DATE_FULL);
 }

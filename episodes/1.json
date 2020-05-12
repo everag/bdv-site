@@ -1,14 +1,15 @@
 {
-  "title": "The First Episode Takes The Longest",
+  "title": "[Piloto] Fan Service, Macacos e Freud",
+  "description": "Seja bem vindo ao Gueimers! Nesse episódio piloto, batemos um papo bem descontraído sobre o que estamos jogando no momento! Perdoem as fungadas e cortes bruscos na música, estamos aprendendo!",
   "date": {
-    "start": "2017-07-17",
-    "end": "2017-07-23"
+    "start": "2019-08-27"
   },
   "youtube": {
     "id": "ngFub1uO-sc"
   },
-  "duration": "8:18",
-  "hosts": ["hswolff"],
+  "duration": "40:50",
+  "hosts": ["ertonnnn", "tarikingsbr", "andrexbts"],
+  "embedded": "https://anchor.fm/gueimers/embed/episodes/Piloto-Fan-Service--Macacos-e-Freud-e54juu",
   "content": [
     {
       "name": "Apollo Server reaches 1.0!",
@@ -16,41 +17,13 @@
         "https://dev-blog.apollodata.com/apollo-server-1-0-a-graphql-server-for-all-node-js-frameworks-2b37d3342f7c"
       ],
       "tags": ["graphql", "apollo"]
-    },
-    {
-      "name": "State of JS",
-      "links": ["https://stateofjs.com/"],
-      "tags": ["javascript"]
-    },
-    {
-      "name": "HTTP2 coming to node",
-      "links": [
-        "https://medium.com/the-node-js-collection/say-hello-to-http-2-for-node-js-core-261ba493846e"
-      ],
-      "tags": ["http2"]
-    },
-    {
-      "name": "Cover of Despacito with a guy snoring",
-      "links": [
-        "http://nymag.com/selectall/2017/07/woman-films-husband-snoring-as-despacito-cover.html?"
-      ],
-      "tags": []
-    },
-    {
-      "name": "DoppioJVM",
-      "links": ["http://plasma-umass.github.io/doppio-demo/"],
-      "tags": ["java"]
-    },
-    {
-      "name": "Apple is continuing its trend of oppenness.",
-      "links": ["https://machinelearning.apple.com/"],
-      "tags": ["apple", "machine-learning"]
-    },
-    {
-      "name": "Funny Dog API",
-      "links": ["https://dog.ceo/dog-api/#all"],
-      "tags": ["api"]
     }
   ],
-  "overflow": []
+  "overflow": [
+    {
+      "name": "Visual Studio Code August 2019",
+      "links": ["https://code.visualstudio.com/updates/v1_38"],
+      "tags": ["vscode"]
+    }
+  ]
 }

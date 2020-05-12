@@ -12,7 +12,7 @@ exports.onCreateNode = function() {
 exports.createPages = async function({ actions, graphql }) {
   const result = await graphql(`
     {
-      allEpisodesJson(sort: { fields: date___end, order: DESC }) {
+      allEpisodesJson(sort: { fields: date___start, order: DESC }) {
         edges {
           node {
             title
@@ -33,7 +33,6 @@ exports.createPages = async function({ actions, graphql }) {
             }
             date {
               start
-              end
             }
           }
         }

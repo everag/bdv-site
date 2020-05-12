@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
-import AudioPlayer from '../components/AudioPlayer';
 import EpisodeListItem from '../components/EpisodeListItem';
 import Host from '../components/Host';
 import Disqus from '../components/Disqus';
@@ -12,11 +11,12 @@ import css from '@emotion/css';
 export default function EpisodeTemplate({ data: { episodesJson } }) {
   const {
     title,
+    description,
+    embedded,
     fields: { episodeNumber, slug },
     hosts,
     content,
     overflow,
-    youtube,
   } = episodesJson;
 
   return (
@@ -24,53 +24,34 @@ export default function EpisodeTemplate({ data: { episodesJson } }) {
       <Helmet title={`E${episodeNumber}: ${title}`} />
       <SEO
         title={title}
-        description={`Episode: ${episodeNumber}`}
+        description={`Episódio: ${episodeNumber}`}
         postSlug={slug}
         isBlogPost
       />
       <EpisodeListItem {...episodesJson} linked={false} />
-      {youtube && (
-        <Fragment>
-          <iframe
-            src={`https://www.youtube.com/embed/${
-              youtube.id
-            }?rel=0&amp;showinfo=0`}
-            frameBorder={0}
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            css={css`
-              @media (min-width: 1000px) {
-                width: 800px;
-                height: 450px;
-              }
-            `}
-          />
-          <p>
-            <a
-              href={`https://www.youtube.com/watch?v=${youtube.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Watch on YouTube
-            </a>
-          </p>
-        </Fragment>
-      )}
-      <AudioPlayer
-        src={`https://chtbl.com/track/E72DG/https://s3.amazonaws.com/the-console-log-podcast/E${episodeNumber}.mp3`}
-      />
+      <p>
+        {description}
+      </p>
+      <iframe
+        src={embedded}
+        height="100%"
+        width="100%"
+        frameBorder="0"
+        scrolling="no"
+        css={{margin:0}}>
+      </iframe>
       <h2>Hosts</h2>
       <div
         css={css`
           display: flex;
-          flex-direction: row;
+          flex-direction: row;  
         `}
       >
         {hosts.map(name => (
           <Host key={name} name={name} />
         ))}
       </div>
-      <h2>Show Links</h2>
+      <h2>Links do Episódio</h2>
       <Links content={content} />
       <h2>Overflow Links</h2>
       <Links content={overflow} />
@@ -102,16 +83,14 @@ export const pageQuery = graphql`
   query EpisodeByNumber($episodeNumber: String!) {
     episodesJson(fields: { episodeNumber: { eq: $episodeNumber } }) {
       title
+      description
+      embedded
       fields {
         episodeNumber
         slug
       }
-      youtube {
-        id
-      }
       date {
         start
-        end
       }
       hosts
       content {

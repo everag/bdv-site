@@ -1,27 +1,13 @@
 import React, { Component } from 'react';
-import hswolff from './hswolff.jpg';
-import MatthewGerstman from './MatthewGerstman.jpg';
-import jetpacmonkey from './jetpacmonkey.jpg';
-import swyx from './swyx.jpg';
-import codehitchhiker from './codehitchhiker.jpg';
-import kentcdodds from './kentcdodds.jpg';
-import NikkitaFTW from './NikkitaFTW.jpg';
-import cassidoo from './cassidoo.jpg';
-import MoonTahoe from './MoonTahoe.jpg';
-import eveporcello from './eveporcello.jpg';
+import ertonnnn from './ertonnnn.jpg';
+import tarikingsbr from './tarikingsbr.jpg';
+import andrexbts from './andrexbts.jpg';
 import css from '@emotion/css';
 
 const hosts = {
-  hswolff,
-  MatthewGerstman,
-  jetpacmonkey,
-  swyx,
-  codehitchhiker,
-  kentcdodds,
-  NikkitaFTW,
-  cassidoo,
-  MoonTahoe,
-  eveporcello,
+  ertonnnn,
+  tarikingsbr,
+  andrexbts
 };
 
 export default class Host extends Component {

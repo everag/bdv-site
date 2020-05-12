@@ -5,16 +5,16 @@ import css from '@emotion/css';
 
 export default () => (
   <Footer>
-    <Left>The Console Log</Left>
+    <Left>Gueimers Podcast</Left>
     <Right>
-      <span>New Episodes Weekly</span>
+      <span>Novos Episódios todo Sábado!</span>
       <Bullet />
       <a
         href="https://github.com/hswolff/theconsolelog"
         target="_blank"
         rel="noopener noreferrer"
       >
-        GitHub
+        Forked from @theconsolelog
       </a>
     </Right>
   </Footer>
