@@ -26,11 +26,6 @@ exports.createPages = async function({ actions, graphql }) {
               links
               tags
             }
-            overflow {
-              name
-              links
-              tags
-            }
             date {
               start
             }
@@ -51,6 +46,7 @@ exports.createPages = async function({ actions, graphql }) {
     createPage,
     edges,
   });
+
   createTagPages({
     createPage,
     edges,
@@ -114,8 +110,8 @@ function createTagPages({ createPage, edges }) {
   const tags = {};
 
   edges.forEach(({ node }) => {
-    node.content.concat(node.overflow).forEach(linkItem => {
-      linkItem.tags.forEach(tag => {
+    node.content.concat(node.overflow).filter(linkItem => linkItem).forEach(linkItem => {
+      (linkItem.tags || {}).forEach(tag => {
         if (!tags[tag]) {
           tags[tag] = {
             name: tag,

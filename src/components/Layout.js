@@ -4,7 +4,6 @@ import { layout } from '../utils/constants';
 
 import Header from './Header';
 import Footer from './Footer';
-import AboutInfoBox from './AboutInfoBox';
 import SEO from './SEO';
 
 export default ({ children }) => (
@@ -19,7 +18,6 @@ export default ({ children }) => (
         paddingTop: 0,
       })}
     >
-      <AboutInfoBox />
       {children}
       <Footer />
     </main>

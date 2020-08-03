@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import logoImage from '../images/logo.png';
 
-const twitterHandle = '@_theconsolelog';
+const twitterHandle = '@BarraDeVida';
 
 export default function SEO({
   title: titleProp,

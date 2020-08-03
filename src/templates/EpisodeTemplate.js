@@ -16,7 +16,6 @@ export default function EpisodeTemplate({ data: { episodesJson } }) {
     fields: { episodeNumber, slug },
     hosts,
     content,
-    overflow,
   } = episodesJson;
 
   return (
@@ -51,10 +50,12 @@ export default function EpisodeTemplate({ data: { episodesJson } }) {
           <Host key={name} name={name} />
         ))}
       </div>
-      <h2>Links do Episódio</h2>
-      <Links content={content} />
-      <h2>Overflow Links</h2>
-      <Links content={overflow} />
+      {(content || []) && (
+          <>
+            <h2>Links do Episódio</h2>
+            <Links content={content} />
+          </>
+      )}
       <Disqus />
     </Layout>
   );
@@ -94,10 +95,6 @@ export const pageQuery = graphql`
       }
       hosts
       content {
-        name
-        links
-      }
-      overflow {
         name
         links
       }

@@ -4,9 +4,6 @@
   "date": {
     "start": "2019-08-27"
   },
-  "youtube": {
-    "id": "ngFub1uO-sc"
-  },
   "duration": "40:50",
   "hosts": ["ertonnnn", "tarikingsbr", "andrexbts"],
   "embedded": "https://anchor.fm/gueimers/embed/episodes/Piloto-Fan-Service--Macacos-e-Freud-e54juu",
@@ -17,13 +14,6 @@
         "https://dev-blog.apollodata.com/apollo-server-1-0-a-graphql-server-for-all-node-js-frameworks-2b37d3342f7c"
       ],
       "tags": ["graphql", "apollo"]
-    }
-  ],
-  "overflow": [
-    {
-      "name": "Visual Studio Code August 2019",
-      "links": ["https://code.visualstudio.com/updates/v1_38"],
-      "tags": ["vscode"]
     }
   ]
 }

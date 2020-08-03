@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';
+import AboutInfoBox from '../components/AboutInfoBox';
 import EpisodeListItem from '../components/EpisodeListItem';
 import css from '@emotion/css';
 
@@ -16,6 +17,7 @@ export default ({ pageContext }) => {
   return (
     <Layout>
       <Helmet title={first ? 'Home' : `Page ${index}`} />
+      <AboutInfoBox />
       {group.map(({ node }) => (
         <EpisodeListItem key={node.fields.episodeNumber} {...node} />
       ))}
