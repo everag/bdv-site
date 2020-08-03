@@ -1,4 +1,4 @@
-# theconsolelog
+# Barra de Vida
 
-A weekly podcast about JavaScript.
+Mais um Podcast sobre videogames :)
 
