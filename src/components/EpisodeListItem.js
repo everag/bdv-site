@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { DateTime } from 'luxon';
-import styled, { css } from 'react-emotion';
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
 export default ({
   linked = true,
