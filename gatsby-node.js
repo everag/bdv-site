@@ -1,6 +1,40 @@
 const path = require('path');
 const createPaginatedPages = require('gatsby-paginate');
 
+// Type defs
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type EpisodesJsonDate {
+      start: Date!
+    }
+
+    type EpisodesJsonContent {
+      name: String!
+      links: [String!]!
+      tags: [String!]!
+    }
+
+    type EpisodesJsonFields {
+      episodeNumber: String
+      slug: String
+    }
+
+    type EpisodesJson implements Node @dontInfer {
+      fields: EpisodesJsonFields
+      title: String!
+      description: String!
+      date: EpisodesJsonDate!
+      duration: String!
+      hosts: [String]!
+      embedded: String!
+      content: [EpisodesJsonContent]
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 // Lifecycle methods
 
 exports.onCreateNode = function() {

@@ -50,11 +50,11 @@ export default function EpisodeTemplate({ data: { episodesJson } }) {
           <Host key={name} name={name} />
         ))}
       </div>
-      {(content || []) && (
-          <>
-            <h2>Links do Episódio</h2>
-            <Links content={content} />
-          </>
+      {content?.length !== 0 && (
+        <>
+          <h2>Links do Episódio</h2>
+          <Links content={content} />
+        </>
       )}
       <Disqus />
     </Layout>

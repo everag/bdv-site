@@ -7,13 +7,5 @@
   "duration": "40:50",
   "hosts": ["ertonnnn", "tarikingsbr", "andrexbts"],
   "embedded": "https://anchor.fm/gueimers/embed/episodes/Piloto-Fan-Service--Macacos-e-Freud-e54juu",
-  "content": [
-    {
-      "name": "Apollo Server reaches 1.0!",
-      "links": [
-        "https://dev-blog.apollodata.com/apollo-server-1-0-a-graphql-server-for-all-node-js-frameworks-2b37d3342f7c"
-      ],
-      "tags": ["graphql", "apollo"]
-    }
-  ]
+  "content": []
 }
