@@ -1,0 +1,14 @@
+{
+  "title": "SC #04 - Só eu conheço esse jogo?",
+  "description": "[Sidecast #04] Sabe aquele jogo que você está convencido que só você jogou e que foi apagado da memória coletiva da humanidade? Nesse episódio, batemos um papo rápido sobre os jogos que a gente acha que só a gente conhece!",
+  "date": {
+    "start": "2020-05-16"
+  },
+  "hosts": ["ertonnnn", "tarikingsbr", "law_reano"],
+  "embedded": "https://anchor.fm/barradevida/embed/episodes/SC-04---S-eu-conheo-esse-jogo-eeeq21",
+  "content": [{
+    "name": "Link para baixar o Cybermercs",
+    "links": ["https://archive.org/details/CybermercsTheSoldiersOfThe22ndCentury"],
+    "tags": []
+  }]
+}

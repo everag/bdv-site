@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import ertonnnn from './ertonnnn.jpg';
 import tarikingsbr from './tarikingsbr.jpg';
 import andrexbts from './andrexbts.jpg';
+import law_reano from './law_reano.jpg';
+import tiobertogueimer from './tiobertogueimer.jpg';
 import css from '@emotion/css';
 
 const hosts = {
   ertonnnn,
   tarikingsbr,
-  andrexbts
+  andrexbts,
+  law_reano,
+  tiobertogueimer,
 };
 
 export default class Host extends Component {
