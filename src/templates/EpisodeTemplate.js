@@ -6,7 +6,7 @@ import EpisodeListItem from '../components/EpisodeListItem';
 import Host from '../components/Host';
 import Disqus from '../components/Disqus';
 import SEO from '../components/SEO';
-import css from '@emotion/css';
+import { css } from '@emotion/core';
 
 export default function EpisodeTemplate({ data: { episodesJson } }) {
   const {

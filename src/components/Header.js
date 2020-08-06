@@ -27,7 +27,7 @@ export default () => (
         <Link to="/episode/tags">Tags</Link>
         <Bullet />
         <a
-          href="https://twitter.com/GueimersPod"
+          href="https://twitter.com/BarraDeVida"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -42,8 +42,8 @@ export default () => (
           Spotify
           {'  '}
           <img
-              src={spotify}
-              css={css`
+            src={spotify}
+            css={css`
               max-width: inherit;
               width: 20px;
               height: 20px;
@@ -62,8 +62,8 @@ export default () => (
           Pocket Casts
           {'  '}
           <img
-              src={pocketCasts}
-              css={css`
+            src={pocketCasts}
+            css={css`
               max-width: inherit;
               width: 20px;
               height: 20px;
@@ -82,8 +82,8 @@ export default () => (
           Castbox
           {'  '}
           <img
-              src={castbox}
-              css={css`
+            src={castbox}
+            css={css`
               max-width: inherit;
               width: 20px;
               height: 20px;
@@ -102,8 +102,8 @@ export default () => (
           Outros agregadores
           {'  '}
           <img
-              src={anchor}
-              css={css`
+            src={anchor}
+            css={css`
               max-width: inherit;
               width: 20px;
               height: 20px;

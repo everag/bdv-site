@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import Layout from '../components/Layout';
 import AboutInfoBox from '../components/AboutInfoBox';
 import EpisodeListItem from '../components/EpisodeListItem';
-import css from '@emotion/css';
+import { css } from '@emotion/core';
 
 export default ({ pageContext }) => {
   const { group, index, first, last, pageCount, pathPrefix } = pageContext;
