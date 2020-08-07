@@ -18,8 +18,8 @@ function maybeLoadDisqusScript(shortname, onLoad) {
 
 export default class Disqus extends Component {
   static defaultProps = {
-    shortname: 'gueimers',
-    urlDomain: 'gueimers.com.br',
+    shortname: 'barradevida',
+    urlDomain: 'barradevida.com.br',
     url: '/',
     identifier: '',
     title: '',

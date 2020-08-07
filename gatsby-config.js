@@ -2,12 +2,12 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Gueimers Podcast',
+    title: 'Barra de Vida',
     description:
         'Um podcast brasileiro sobre videogames, onde falamos tanto sobre jogos antigos quanto novos, ' +
         'cobrimos praticamente todas as plataformas atuais, e contamos o que sentimos jogando, com bom ' +
         'humor e (quase) sem favoritismos!',
-    siteUrl: 'http://gueimers.com.br',
+    siteUrl: 'http://barradevida.com.br',
     keywords: 'podcast, video-games, videogames, games, jogos',
   },
   plugins: [
