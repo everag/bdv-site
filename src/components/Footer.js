@@ -5,9 +5,9 @@ import css from '@emotion/css';
 
 export default () => (
   <Footer>
-    <Left>Gueimers Podcast</Left>
+    <Left>Barra de Vida ♡ Podcast</Left>
     <Right>
-      <span>Novos Episódios todo Sábado!</span>
+      <span>Novos Episódios (quase) todo Sábado!</span>
       <Bullet />
       <a
         href="https://github.com/hswolff/theconsolelog"

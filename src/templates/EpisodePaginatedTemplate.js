@@ -16,7 +16,7 @@ export default ({ pageContext }) => {
 
   return (
     <Layout>
-      <Helmet title={first ? 'Home' : `Page ${index}`} />
+      <Helmet title={first ? 'Home' : `Página ${index}`} />
       <AboutInfoBox />
       {group.map(({ node }) => (
         <EpisodeListItem key={node.fields.episodeNumber} {...node} />
@@ -46,13 +46,13 @@ const Navigation = ({
     `}
   >
     <NavButton css={css({ visibility: first ? 'hidden' : 'visible ' })}>
-      <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
+      <NavLink test={first} url={previousUrl} text="Página anterior" />
     </NavButton>
     <div css={css({ marginTop: '5px' })}>
       Page {index} of {pageCount}
     </div>
     <NavButton css={css({ visibility: last ? 'hidden' : 'visible ' })}>
-      <NavLink test={last} url={nextUrl} text="Go to Next Page" />
+      <NavLink test={last} url={nextUrl} text="Próxima página" />
     </NavButton>
   </div>
 );

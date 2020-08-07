@@ -5,7 +5,7 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -b master",
+    "deploy": "gatsby build && cp CNAME public/. && gh-pages -d public -b master",
     "lint": "eslint ."
   },
   "dependencies": {

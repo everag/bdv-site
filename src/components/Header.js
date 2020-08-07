@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { layout } from '../utils/constants';
+import bdvLogo from '../images/bdv-logo-horizontal.png';
 import spotify from '../images/spotify-logo.png';
 import pocketCasts from '../images/pocket-casts-logo.png';
 import castbox from '../images/castbox-logo.png';
@@ -18,7 +19,9 @@ export default () => (
     <HeaderInner>
       <LogoContainer>
         <Title>
-          <Link to="/">Gueimers Podcast</Link>
+          <Link to="/" css={css({ boxShadow: 'none' })}>
+            <Logo src={bdvLogo} title="Title" />
+          </Link>
         </Title>
       </LogoContainer>
       <Nav>
@@ -95,7 +98,7 @@ export default () => (
         </a>
         <Bullet />
         <a
-          href="https://anchor.fm/gueimers"
+          href="https://anchor.fm/barradevida"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -131,12 +134,12 @@ const HeaderInner = styled('div')`
 const LogoContainer = styled('div')`
   display: flex;
   flex-direction: row;
+  width: 100%;
   align-items: center;
 `;
 
 const Logo = styled('img')`
-  width: 64px;
-  height: 64px;
+  height: 250px;
   margin: 0;
 `;
 
