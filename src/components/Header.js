@@ -139,7 +139,8 @@ const LogoContainer = styled('div')`
 `;
 
 const Logo = styled('img')`
-  height: 250px;
+  max-height: 100px;
+  width: auto;
   margin: 0;
 `;
 
