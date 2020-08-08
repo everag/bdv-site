@@ -56,7 +56,7 @@ export default function EpisodeTemplate({ data: { episodesJson } }) {
           <Links content={content} />
         </>
       )}
-      <Disqus />
+      <Disqus identifier={slug} url={`episode/${episodeNumber}`} />
     </Layout>
   );
 }

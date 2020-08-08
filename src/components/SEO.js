@@ -49,7 +49,7 @@ export default function SEO({
             <title>{title}</title>
             <meta name="description" content={description} />
             {/* <!-- Twitter Card data --> */}
-            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content={twitterHandle} />
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />

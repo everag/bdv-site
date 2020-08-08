@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';
-import AboutInfoBox from '../components/AboutInfoBox';
 import EpisodeListItem from '../components/EpisodeListItem';
 import { css } from '@emotion/core';
 
@@ -17,7 +16,7 @@ export default ({ pageContext }) => {
   return (
     <Layout>
       <Helmet title={first ? 'Home' : `Página ${index}`} />
-      <AboutInfoBox />
+      <h1>Episódios</h1>
       {group.map(({ node }) => (
         <EpisodeListItem key={node.fields.episodeNumber} {...node} />
       ))}
@@ -49,7 +48,7 @@ const Navigation = ({
       <NavLink test={first} url={previousUrl} text="Página anterior" />
     </NavButton>
     <div css={css({ marginTop: '5px' })}>
-      Page {index} of {pageCount}
+      Página {index} de {pageCount}
     </div>
     <NavButton css={css({ visibility: last ? 'hidden' : 'visible ' })}>
       <NavLink test={last} url={nextUrl} text="Próxima página" />

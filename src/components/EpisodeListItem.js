@@ -16,11 +16,11 @@ export default ({
         {formatDate(date.start)}
       </Dates>
       {linked ? (
-        <h3 className={titleCss}>
+        <h3 css={titleCss}>
           <Link to={slug}>{title}</Link>
         </h3>
       ) : (
-        <h1 className={titleCss}>{title}</h1>
+        <h1 css={titleCss}>{title}</h1>
       )}
 
       <Subtitle>Episódio: {episodeNumber}</Subtitle>

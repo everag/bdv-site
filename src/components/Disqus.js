@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { css } from '@emotion/core';
 
 let hasLoaded = false;
 function maybeLoadDisqusScript(shortname, onLoad) {
@@ -20,7 +21,7 @@ export default class Disqus extends Component {
   static defaultProps = {
     shortname: 'barradevida',
     urlDomain: 'barradevida.com.br',
-    url: '/',
+    url: '',
     identifier: '',
     title: '',
   };
@@ -34,7 +35,7 @@ export default class Disqus extends Component {
           reload: true,
           config: function() {
             const { location } = window;
-            this.page.url = `${location.protocol}//${urlDomain}${url}`;
+            this.page.url = `${location.protocol}//${urlDomain}/${url}`;
             this.page.identifier = identifier;
             this.page.title = title;
           },
@@ -44,6 +45,8 @@ export default class Disqus extends Component {
   }
 
   render() {
-    return <div id="disqus_thread" />;
+    return <div id="disqus_thread" css={css`
+      margin-top: 3.64rem;
+    `} />;
   }
 }
