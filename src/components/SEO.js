@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import logoImage from '../images/bdv-logo-square.png';
+import logoImage from '../images/bdv-logo-square.jpeg';
 
 const twitterHandle = '@BarraDeVida';
 
@@ -54,10 +54,10 @@ export default function SEO({
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:creator" content={twitterHandle} />
-            <meta name="twitter:image" content={image} />
+            <meta property="twitter:image:src" content={image} />
             {/* <!-- Open Graph data --> */}
+            {/*{isBlogPost && <meta property="og:type" content="article" />}*/}
             <meta property="og:title" content={title} />
-            {isBlogPost && <meta property="og:type" content="article" />}
             <meta property="og:url" content={url} />
             <meta property="og:image" content={image} />
             <meta property="og:description" content={description} />
