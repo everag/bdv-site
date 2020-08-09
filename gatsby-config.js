@@ -7,7 +7,7 @@ module.exports = {
         'Um podcast brasileiro sobre videogames, onde falamos tanto sobre jogos antigos quanto novos, ' +
         'cobrimos praticamente todas as plataformas atuais, e contamos o que sentimos jogando, com bom ' +
         'humor e (quase) sem favoritismos!',
-    siteUrl: 'http://barradevida.com.br',
+    siteUrl: 'https://barradevida.com.br',
     keywords: 'podcast, video-games, videogames, games, jogos',
   },
   plugins: [

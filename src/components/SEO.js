@@ -56,10 +56,12 @@ export default function SEO({
             <meta name="twitter:creator" content={twitterHandle} />
             <meta property="twitter:image:src" content={image} />
             {/* <!-- Open Graph data --> */}
-            {/*{isBlogPost && <meta property="og:type" content="article" />}*/}
+            {isBlogPost && <meta property="og:type" content="article" />}
             <meta property="og:title" content={title} />
             <meta property="og:url" content={url} />
             <meta property="og:image" content={image} />
+            <meta property="og:image:type" content="image/jpeg" />
+            <meta property="og:image:alt" content="Logo: Barra de Vida" />
             <meta property="og:description" content={description} />
             <meta property="og:site_name" content={siteMetadata.title} />
           </Helmet>
