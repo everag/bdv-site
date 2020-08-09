@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { layout } from '../utils/constants';
-import bdvLogo from '../images/bdv-logo-horizontal.png';
+import bdvLogo from '../images/bdv-logo-horizontal-white.svg';
 import spotify from '../images/spotify-logo.png';
 import pocketCasts from '../images/pocket-casts-logo.png';
 import castbox from '../images/castbox-logo.png';
@@ -140,8 +140,9 @@ const LogoContainer = styled('div')`
 
 const Logo = styled('img')`
   max-height: 100px;
-  width: auto;
-  margin: 0;
+  width: 450px;
+  height: auto;
+  margin: 15px 0;
 `;
 
 const Title = styled('h1')`
