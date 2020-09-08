@@ -48,6 +48,13 @@ module.exports = {
         path: path.join(__dirname, 'episodes'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'thumbnails',
+        path: path.join(__dirname, 'thumbnails'),
+      },
+    },
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-offline',

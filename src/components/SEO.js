@@ -29,7 +29,7 @@ export default function SEO({
       render={({ site: { siteMetadata } }) => {
         const title = titleProp || siteMetadata.title;
         const description = descriptionProp || siteMetadata.description;
-        const image = imageProp || `${siteMetadata.siteUrl}${logoImage}`;
+        const image = `${siteMetadata.siteUrl}${imageProp || logoImage}`;
         let url = siteMetadata.siteUrl;
         if (postSlug) {
           url += postSlug;
@@ -51,10 +51,7 @@ export default function SEO({
             {/* <!-- Twitter Card data --> */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content={twitterHandle} />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
             <meta name="twitter:creator" content={twitterHandle} />
-            <meta property="twitter:image:src" content={image} />
             {/* <!-- Open Graph data --> */}
             {isBlogPost && <meta property="og:type" content="article" />}
             <meta property="og:title" content={title} />

@@ -8,7 +8,7 @@ import Disqus from '../components/Disqus';
 import SEO from '../components/SEO';
 import { css } from '@emotion/core';
 
-export default function EpisodeTemplate({ data: { episodesJson } }) {
+export default function EpisodeTemplate({ data: { episodesJson, file } }) {
   const {
     title,
     description,
@@ -18,6 +18,10 @@ export default function EpisodeTemplate({ data: { episodesJson } }) {
     content,
   } = episodesJson;
 
+  const {
+    publicURL: image
+  } = file ?? {};
+
   return (
     <Layout>
       <Helmet title={`E${episodeNumber}: ${title}`} />
@@ -25,6 +29,7 @@ export default function EpisodeTemplate({ data: { episodesJson } }) {
         title={title}
         description={`Episódio: ${episodeNumber}`}
         postSlug={slug}
+        image={image}
         isBlogPost
       />
       <EpisodeListItem {...episodesJson} linked={false} />
@@ -98,6 +103,9 @@ export const pageQuery = graphql`
         name
         links
       }
+    }
+    file(sourceInstanceName: {eq: "thumbnails"}, name: {eq: $episodeNumber}){
+      publicURL
     }
   }
 `;
