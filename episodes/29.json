@@ -8,25 +8,56 @@
   "embedded": "https://anchor.fm/barradevida/embed/episodes/Jogos-e-Podcasts-Nunca-Lanados-e-Outras-Histrias-Tristes-elavt3",
   "content": [
     {
-      "name": "Trailer: Star Wars 1313",
+      "name": "Venha para o Bar da Vida! Conheça a nossa comunidado no Discord!",
+      "links": ["https://tinyurl.com/bdvdiscord"],
+      "tags": []
+    },
+    {
+      "name": "Van Buren, o Fallout 3 original (Wiki em Inglês)",
+      "links": ["https://fallout.fandom.com/wiki/Van_Buren"],
+      "tags": ["Fallout"]
+    },
+    {
+      "name": "Star Wars 1313 (Trailer da E3 2012)",
       "links": ["https://www.youtube.com/watch?v=J_1_Nvn7DPM"],
       "tags": ["Trailer", "Star Wars"]
     },
     {
-      "name": "Trailer, Gameplay e Artigo: P.T. (Silent Hills)",
+      "name": "P.T. / Silent Hills (Trailer, Gameplay e Artigo)",
       "links": [
         "https://www.youtube.com/watch?v=B4kIbwlGxBg",
         "https://www.youtube.com/watch?v=blD2TiavFJA",
         "https://gizmodo.uol.com.br/silent-hills-cancelado"
       ],
-      "tags": ["Trailer", "Silent Hill"]
+      "tags": ["Silent Hill"]
     },
     {
-      "name": "Artigo: Fortress, o Final Fantasy cancelado (Inglês)",
+      "name": "Fortress, o Final Fantasy cancelado (Artigo em Inglês)",
       "links": [
-        "https://www.gamespot.com/articles/the-story-behind-fortress-the-final-fantasy-game-t/1100-6431036/"
+        "https://www.gamespot.com/articles/the-story-behind-fortress-the-final-fantasy-game-t/1100-6431036"
       ],
       "tags": ["Final Fantasy"]
+    },
+    {
+      "name": "Como Final Fantaxy Versus XIII virou Final Fantasy XV (Artigo) ",
+      "links": [
+        "https://www.theenemy.com.br/final-fantasy/final-fantasy-xv/final-fantasy-xv-os-dez-anos-de-desenvolvimento-do-game-em-15-fatos"
+      ],
+      "tags": ["Final Fantasy"]
+    },
+    {
+      "name": "Duke Nukem Forever (Artigo)",
+      "links": [
+        "http://www.trocajogo.com.br/blog/post/grandes-fiascos-o-infame-conto-de-duke-nukem-forever"
+      ],
+      "tags": ["Duke Nukem"]
+    },
+    {
+      "name": "Gameplay: Prey 2",
+      "links": [
+        "https://adrenaline.com.br/noticias/v/54729/gameplay-mostra-como-seria-prey-2-game-cancelado-pela-bethesda"
+      ],
+      "tags": []
     }
   ]
 }

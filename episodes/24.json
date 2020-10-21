@@ -6,5 +6,11 @@
   },
   "hosts": ["ertonnnn", "tarikingsbr", "tiobertogueimer"],
   "embedded": "https://anchor.fm/barradevida/embed/episodes/Lidando-com-o-Hype-eg18jj",
-  "content": []
+  "content": [
+    {
+      "name": "Venha para o Bar da Vida! Conheça a nossa comunidado no Discord!",
+      "links": ["https://tinyurl.com/bdvdiscord"],
+      "tags": []
+    }
+  ]
 }

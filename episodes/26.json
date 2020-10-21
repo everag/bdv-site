@@ -7,5 +7,10 @@
   "hosts": ["ertonnnn", "tiobertogueimer", "tarikingsbr"],
   "embedded": "https://anchor.fm/barradevida/embed/episodes/TOP-5-Tudo-sob-controle-eig7o7",
   "content": [
+    {
+      "name": "Venha para o Bar da Vida! Conheça a nossa comunidado no Discord!",
+      "links": ["https://tinyurl.com/bdvdiscord"],
+      "tags": []
+    }
   ]
 }
