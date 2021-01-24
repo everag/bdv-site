@@ -1,0 +1,23 @@
+{
+  "title": "Os Melhores de 2020",
+  "description": "Que ano doido, queridos ouvintes! Em plena pandemia, tivemos atrasos, cancelamentos, lançamentos conturbados e controversos de novos hardwares e jogos, mas também tivemos gratas surpresas e grandes jogos que nos mantiveram ocupados durante o isolamento social. Nesse último episódio de 2020, juntamos (quase) todos os hosts e chamamos uma convidada querida para a grande festa da firma do Podcast, e premiamos com um grande pavê de ouro os principais jogos do ano!",
+  "date": {
+    "start": "2020-12-31"
+  },
+  "hosts": ["ertonnnn", "tarikingsbr", "law_reano"],
+  "embedded": "https://anchor.fm/barradevida/embed/episodes/Os-Melhores-de-2020-eodm9q",
+  "content": [
+    {
+      "name": "Venha para o Bar da Vida! Conheça a nossa comunidado no Discord!",
+      "links": ["https://tinyurl.com/bdvdiscord"],
+      "tags": []
+    },
+    {
+      "name": "Conheça o Discord da Hay!",
+      "links": [
+        "https://www.twitch.tv/lilyyevans"
+      ],
+      "tags": []
+    }
+  ]
+}
