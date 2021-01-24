@@ -5,6 +5,7 @@
     "start": "2020-12-31"
   },
   "hosts": ["ertonnnn", "tarikingsbr", "law_reano"],
+  "guests": ["hayrucker"],
   "embedded": "https://anchor.fm/barradevida/embed/episodes/Os-Melhores-de-2020-eodm9q",
   "content": [
     {

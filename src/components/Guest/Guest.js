@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 
-import ertonnnn from './ertonnnn.jpg';
-import tarikingsbr from './tarikingsbr.jpg';
-import andrexbts from './andrexbts.jpg';
-import law_reano from './law_reano.jpg';
-import tiobertogueimer from './tiobertogueimer.jpg';
+import deadpilot from './deadpilot.png';
+import hayrucker from './hayrucker.jpg';
 import css from '@emotion/css';
 
-const hosts = {
-  ertonnnn,
-  tarikingsbr,
-  andrexbts,
-  law_reano,
-  tiobertogueimer,
+const guests = {
+  deadpilot,
+  hayrucker
 };
 
-export default class Host extends Component {
+export default class Guest extends Component {
   render() {
     const { name } = this.props;
     return (
@@ -38,7 +32,7 @@ export default class Host extends Component {
       >
         <img
           alt={name}
-          src={hosts[name]}
+          src={guests[name]}
           css={css`
             border-radius: 50%;
             width: 100px;

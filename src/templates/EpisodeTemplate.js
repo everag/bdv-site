@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import EpisodeListItem from '../components/EpisodeListItem';
 import Host from '../components/Host';
+import Guest from '../components/Guest';
 import Disqus from '../components/Disqus';
 import SEO from '../components/SEO';
 import { css } from '@emotion/core';
@@ -15,6 +16,7 @@ export default function EpisodeTemplate({ data: { episodesJson, file } }) {
     embedded,
     fields: { episodeNumber, slug },
     hosts,
+    guests,
     content,
   } = episodesJson;
 
@@ -55,6 +57,21 @@ export default function EpisodeTemplate({ data: { episodesJson, file } }) {
           <Host key={name} name={name} />
         ))}
       </div>
+      {guests && (
+        <>
+          <h2>Participação Especial</h2>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: row;  
+            `}
+          >
+            {guests.map(name => (
+              <Guest key={name} name={name} />
+            ))}
+          </div>
+        </>
+      )}
       {content?.length !== 0 && (
         <>
           <h2>Links do Episódio</h2>
@@ -99,6 +116,7 @@ export const pageQuery = graphql`
         start
       }
       hosts
+      guests
       content {
         name
         links

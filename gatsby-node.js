@@ -28,6 +28,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       date: EpisodesJsonDate!
       duration: String!
       hosts: [String]!
+      guests: [String]
       embedded: String!
       content: [EpisodesJsonContent]
     }
@@ -55,6 +56,7 @@ exports.createPages = async function({ actions, graphql }) {
               slug
             }
             hosts
+            guests
             content {
               name
               links
