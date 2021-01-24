@@ -17,19 +17,6 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography.js',
       },
     },
-    {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'Bangers',
-          },
-          {
-            family: 'Press Start 2P',
-          },
-        ],
-      },
-    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     // TODO: Configure Analytics for the website
