@@ -3,13 +3,12 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import EpisodeListItem from '../components/EpisodeListItem';
-import Host from '../components/Host';
-import Guest from '../components/Guest';
+import Participant from '../components/Participant';
 import Disqus from '../components/Disqus';
 import SEO from '../components/SEO';
 import { css } from '@emotion/core';
 
-export default function EpisodeTemplate({ data: { episodesJson, file } }) {
+export default function EpisodeTemplate({ data: { episodesJson, allParticipantsJson, file, allFile } }) {
   const {
     title,
     description,
@@ -19,6 +18,15 @@ export default function EpisodeTemplate({ data: { episodesJson, file } }) {
     guests,
     content,
   } = episodesJson;
+
+  console.log(allParticipantsJson);
+
+  const participants = {};
+  allParticipantsJson.edges.forEach(({node}) => {
+    const id = node.fields.participantId;
+    const avatarUrl = allFile.edges.map(edge => edge.node).find(({name}) => name === id).publicURL;
+    participants[id] = {...node, avatarUrl};
+  });
 
   const {
     publicURL: image
@@ -53,8 +61,8 @@ export default function EpisodeTemplate({ data: { episodesJson, file } }) {
           flex-direction: row;  
         `}
       >
-        {hosts.map(name => (
-          <Host key={name} name={name} />
+        {hosts.map(host => participants[host]).map(participant => (
+          <Participant key={participant} {...participant} />
         ))}
       </div>
       {guests && (
@@ -66,8 +74,8 @@ export default function EpisodeTemplate({ data: { episodesJson, file } }) {
               flex-direction: row;  
             `}
           >
-            {guests.map(name => (
-              <Guest key={name} name={name} />
+            {guests.map(guest => participants[guest]).map(participant => (
+              <Participant key={participant} {...participant} />
             ))}
           </div>
         </>
@@ -120,6 +128,26 @@ export const pageQuery = graphql`
       content {
         name
         links
+      }
+    }
+    allParticipantsJson {
+      edges {
+        node {
+          fields {
+            participantId
+          }
+          displayName
+          fullName
+          socialNetwork
+        }
+      }
+    }
+    allFile(filter: {sourceInstanceName: {eq: "avatars"}}) {
+      edges {
+        node {
+          publicURL
+          name
+        }
       }
     }
     file(sourceInstanceName: {eq: "thumbnails"}, name: {eq: $episodeNumber}){

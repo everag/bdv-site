@@ -32,6 +32,17 @@ exports.createSchemaCustomization = ({ actions }) => {
       embedded: String!
       content: [EpisodesJsonContent]
     }
+    
+    type ParticipantsJsonFields {
+      participantId: String
+    }
+    
+    type ParticipantsJson implements Node @dontInfer {
+      fields: ParticipantsJsonFields
+      displayName: String!
+      fullName: String
+      socialNetwork: String
+    }
   `;
   createTypes(typeDefs);
 };
@@ -40,12 +51,12 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.onCreateNode = function() {
   return Promise.all(
-    [addFileNameToEpisode].map(fn => fn.apply(this, arguments))
+    [addFileNameToEpisode, addParticipantIdToParticipant].map(fn => fn.apply(this, arguments))
   );
 };
 
 exports.createPages = async function({ actions, graphql }) {
-  const result = await graphql(`
+  const episodesResult = await graphql(`
     {
       allEpisodesJson(sort: { fields: date___start, order: DESC }) {
         edges {
@@ -71,29 +82,29 @@ exports.createPages = async function({ actions, graphql }) {
     }
   `);
 
-  if (result.errors) {
-    return Promise.reject(result.errors);
+  if (episodesResult.errors) {
+    return Promise.reject(episodesResult.errors);
   }
 
+  const episodesEdges = episodesResult.data.allEpisodesJson.edges;
   const { createPage } = actions;
-  const edges = result.data.allEpisodesJson.edges;
 
   createEpisodePage({
     createPage,
-    edges,
+    edges: episodesEdges
   });
 
   createTagPages({
     createPage,
-    edges,
+    edges: episodesEdges,
   });
 
   createPaginatedPages({
-    edges: result.data.allEpisodesJson.edges,
     createPage,
+    edges: episodesEdges,
     pageTemplate: 'src/templates/EpisodePaginatedTemplate.js',
-    pageLength: 10, // This is optional and defaults to 10 if not used
-    pathPrefix: '/page/', // This is optional and defaults to an empty string if not used
+    pageLength: 10, // Optional. Defaults to 10
+    pathPrefix: '/page/', // Optional. Defaults to empty
     buildPath: (index, pathPrefix) =>
       index > 1 ? `${pathPrefix}${index}` : '/',
   });
@@ -124,7 +135,24 @@ function addFileNameToEpisode({ node, actions, getNode }) {
   });
 }
 
-function createEpisodePage({ edges, createPage }) {
+function addParticipantIdToParticipant({ node, actions, getNode }) {
+  if (node.internal.type !== 'ParticipantsJson') {
+    return;
+  }
+
+  const parentNode = getNode(node.parent);
+  const { createNodeField } = actions;
+
+  const participantId = parentNode.name;
+
+  createNodeField({
+    node,
+    name: 'participantId',
+    value: participantId,
+  });
+}
+
+function createEpisodePage({ createPage, edges }) {
   const episodeTemplate = path.resolve('src/templates/EpisodeTemplate.js');
 
   edges.forEach(({ node }) => {
@@ -134,7 +162,7 @@ function createEpisodePage({ edges, createPage }) {
       path: `/episode/${episodeNumber}`,
       component: episodeTemplate,
       context: {
-        episodeNumber,
+        episodeNumber
       },
     });
   });

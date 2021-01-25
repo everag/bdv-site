@@ -38,6 +38,20 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'participants',
+        path: path.join(__dirname, 'participants'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'avatars',
+        path: path.join(__dirname, 'avatars'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'thumbnails',
         path: path.join(__dirname, 'thumbnails'),
       },
