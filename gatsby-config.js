@@ -4,9 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Barra de Vida',
     description:
-        'Um podcast brasileiro sobre videogames, onde falamos tanto sobre jogos antigos quanto novos, ' +
-        'cobrimos praticamente todas as plataformas atuais, e contamos o que sentimos jogando, com bom ' +
-        'humor e (quase) sem favoritismos!',
+        'Um podcast brasileiro sobre videogames! Falamos sobre jogos recentes e antigos e contamos o que sentimos jogando, com bom humor e (quase) sem favoritismos! Por Everton Agner, Tarik Reis, Gilberto Lecci e Laureano.',
     siteUrl: 'https://barradevida.com.br',
     keywords: 'podcast, video-games, videogames, games, jogos',
   },
@@ -32,28 +30,28 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'episodes',
-        path: path.join(__dirname, 'episodes'),
+        path: path.join(__dirname, 'data', 'episodes'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'participants',
-        path: path.join(__dirname, 'participants'),
+        path: path.join(__dirname, 'data', 'participants'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'avatars',
-        path: path.join(__dirname, 'avatars'),
+        path: path.join(__dirname, 'data', 'avatars'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'thumbnails',
-        path: path.join(__dirname, 'thumbnails'),
+        path: path.join(__dirname, 'data', 'thumbnails'),
       },
     },
     'gatsby-transformer-json',
