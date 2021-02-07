@@ -1,0 +1,41 @@
+{
+  "title": "E as Placas de Vídeo da AMD?",
+  "description": "Embora a gigante esmeralda seja destaque no mercado das placas de vídeo, a AMD tem um papel importantíssimo na indústria! Buscando sempre trazer o melhor custo benefício e causar confusão com as suas linhas numeradas, a AMD tem um lugar especial guardado no coração de muitos de nós. Ative o undervolt, abra a tampa do seu gabinete, bote o ventilador virado pra ele e vem com a gente descobrir se a nova geração das placas gráficas RX da AMD vão bater de frente com as RTX!",
+  "date": {
+    "start": "2021-02-07"
+  },
+  "hosts": ["everton", "gilberto"],
+  "guests": ["clecius"],
+  "embedded": "https://anchor.fm/barradevida/embed/episodes/E-as-Placas-de-Vdeo-da-AMD-eq21k8",
+  "content": [
+    {
+      "name": "Venha para o Bar da Vida! Conheça a nossa comunidado no Discord!",
+      "links": ["https://tinyurl.com/bdvdiscord"],
+      "tags": []
+    },
+    {
+      "name": "Conheça o Podtag, o Podcast do Clécius!",
+      "links": [
+        "https://podtag.com.br",
+        "https://podtag.com.br/tageando-pelo-mundo-06-canada",
+        "https://podtag.com.br/offtag-10-fim-de-temporada"
+      ],
+      "tags": []
+    },
+    {
+      "name": "As Placas da Série RX6000 da AMD",
+      "links": [
+        "https://www.amd.com/pt/graphics/amd-radeon-rx-6000-series"
+      ],
+      "tags": ["AMD", "PC Gaming"]
+    },
+    {
+      "name": "Monitores FreeSync compatíveis com GSync",
+      "links": [
+        "https://www.nvidia.com/en-us/geforce/products/g-sync-monitors/specs",
+        "https://docs.google.com/spreadsheets/d/1YI0RQcymJSY0-LkbjSRGswWpJzVRuK_4zMvphRbh19k/edit#gid=0"
+      ],
+      "tags": ["PC Gaming"]
+    }
+  ]
+}
