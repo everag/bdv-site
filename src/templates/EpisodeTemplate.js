@@ -1,19 +1,38 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import EpisodeListItem from '../components/EpisodeListItem';
 import Participant from '../components/Participant';
 import Disqus from '../components/Disqus';
 import SEO from '../components/SEO';
-import { css } from '@emotion/core';
+import {css} from '@emotion/core';
 
-export default function EpisodeTemplate({ data: { episodesJson, allParticipantsJson, file, allFile } }) {
+const Links = ({content}) => (
+  <ul>
+    {content.map(({name, links}) => (
+      <li key={name}>
+        {name}
+        <ul>
+          {links.map(link => (
+            <li key={link}>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                {link}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+);
+
+export default function EpisodeTemplate({data: {episodesJson, allParticipantsJson, file, allFile}}) {
   const {
     title,
     description,
     embedded,
-    fields: { episodeNumber, slug },
+    fields: {episodeNumber, slug},
     hosts,
     guests,
     content,
@@ -34,7 +53,7 @@ export default function EpisodeTemplate({ data: { episodesJson, allParticipantsJ
 
   return (
     <Layout>
-      <Helmet title={`E${episodeNumber}: ${title}`} />
+      <Helmet title={`E${episodeNumber}: ${title}`}/>
       <SEO
         title={title}
         description={`Episódio: ${episodeNumber}`}
@@ -42,23 +61,21 @@ export default function EpisodeTemplate({ data: { episodesJson, allParticipantsJ
         image={image}
         isBlogPost
       />
-      <EpisodeListItem {...episodesJson} linked={false} />
+      <EpisodeListItem {...episodesJson} linked={false}/>
       <p>
         {description}
       </p>
       <iframe
         src={embedded}
-        height="100%"
-        width="100%"
         frameBorder="0"
         scrolling="no"
-        css={{margin:0}}>
+        css={{margin: 0, height: 161, width: '100%'}}>
       </iframe>
       <h2>Hosts</h2>
       <div
         css={css`
           display: flex;
-          flex-direction: row;  
+          flex-direction: row;
         `}
       >
         {hosts.map(host => participants[host]).map(participant => (
@@ -71,7 +88,7 @@ export default function EpisodeTemplate({ data: { episodesJson, allParticipantsJ
           <div
             css={css`
               display: flex;
-              flex-direction: row;  
+              flex-direction: row;
             `}
           >
             {guests.map(guest => participants[guest]).map(participant => (
@@ -83,32 +100,13 @@ export default function EpisodeTemplate({ data: { episodesJson, allParticipantsJ
       {content?.length !== 0 && (
         <>
           <h2>Links do Episódio</h2>
-          <Links content={content} />
+          <Links content={content}/>
         </>
       )}
-      <Disqus identifier={slug} url={`episode/${episodeNumber}`} />
+      <Disqus identifier={slug} url={`episode/${episodeNumber}`}/>
     </Layout>
   );
 }
-
-const Links = ({ content }) => (
-  <ul>
-    {content.map(({ name, links }) => (
-      <li key={name}>
-        {name}
-        <ul>
-          {links.map(link => (
-            <li key={link}>
-              <a href={link} target="_blank" rel="noopener noreferrer">
-                {link}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </li>
-    ))}
-  </ul>
-);
 
 export const pageQuery = graphql`
   query EpisodeByNumber($episodeNumber: String!) {
