@@ -3,11 +3,11 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { layout } from '../utils/constants';
-import bdvLogo from '../images/bdv-logo-horizontal-white.svg';
-import spotify from '../images/spotify-logo.png';
-import pocketCasts from '../images/pocket-casts-logo.png';
-import castbox from '../images/castbox-logo.png';
-import anchor from '../images/anchor-logo.png';
+import bdvLogo from '../images/logos/bdv-horizontal-white.svg';
+import spotify from '../images/logos/external/spotify.png';
+import pocketCasts from '../images/logos/external/pocket-casts.png';
+import castbox from '../images/logos/external/castbox.png';
+import anchor from '../images/logos/external/anchor.png';
 
 export default () => (
   <header

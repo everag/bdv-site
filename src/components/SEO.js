@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import logoImage from '../images/bdv-logo-square.jpeg';
+import logoImage from '../images/logos/bdv-square.jpeg';
 
 const twitterHandle = '@BarraDeVida';
 

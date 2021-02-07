@@ -38,8 +38,6 @@ export default function EpisodeTemplate({data: {episodesJson, allParticipantsJso
     content,
   } = episodesJson;
 
-  console.log(allParticipantsJson);
-
   const participants = {};
   allParticipantsJson.edges.forEach(({node}) => {
     const id = node.fields.participantId;
