@@ -56,40 +56,13 @@ exports.onCreateNode = function() {
 };
 
 exports.createPages = async function({ actions, graphql }) {
-  const episodesResult = await graphql(`
-    {
-      allEpisodesJson(sort: { fields: date___start, order: DESC }) {
-        edges {
-          node {
-            title
-            fields {
-              episodeNumber
-              slug
-            }
-            hosts
-            guests
-            content {
-              name
-              links
-              tags
-            }
-            date {
-              start
-            }
-          }
-        }
-      }
-    }
-  `);
 
-  if (episodesResult.errors) {
-    return Promise.reject(episodesResult.errors);
-  }
+  const episodesEdges = await queryAllEpisodesEdges(graphql);
+  const participantsEdges = await queryAllParticipantsEdges(graphql);
 
-  const episodesEdges = episodesResult.data.allEpisodesJson.edges;
   const { createPage } = actions;
 
-  createEpisodePage({
+  createEpisodePages({
     createPage,
     edges: episodesEdges
   });
@@ -107,6 +80,11 @@ exports.createPages = async function({ actions, graphql }) {
     pathPrefix: '/page/', // Optional. Defaults to empty
     buildPath: (index, pathPrefix) =>
       index > 1 ? `${pathPrefix}${index}` : '/',
+  });
+
+  createParticipantsPages({
+    createPage,
+    edges: participantsEdges,
   });
 };
 
@@ -152,7 +130,65 @@ function addParticipantIdToParticipant({ node, actions, getNode }) {
   });
 }
 
-function createEpisodePage({ createPage, edges }) {
+async function queryAllEpisodesEdges(graphql) {
+  const episodesResult = await graphql(`
+    {
+      allEpisodesJson(sort: { fields: date___start, order: DESC }) {
+        edges {
+          node {
+            title
+            fields {
+              episodeNumber
+              slug
+            }
+            hosts
+            guests
+            content {
+              name
+              links
+              tags
+            }
+            date {
+              start
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (episodesResult.errors) {
+    return Promise.reject(episodesResult.errors);
+  }
+  return episodesResult.data.allEpisodesJson.edges;
+}
+
+async function queryAllParticipantsEdges(graphql) {
+  const participantsResult = await graphql(`
+    {
+      allParticipantsJson(sort: { fields: displayName }) {
+        edges {
+          node {
+            displayName
+            fullName
+            socialNetwork
+            fields {
+              participantId
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (participantsResult.errors) {
+    return Promise.reject(participantsResult.errors);
+  }
+
+  return participantsResult.data.allParticipantsJson.edges;
+}
+
+function createEpisodePages({ createPage, edges }) {
   const episodeTemplate = path.resolve('src/templates/EpisodeTemplate.js');
 
   edges.forEach(({ node }) => {
@@ -210,4 +246,20 @@ function createTagPages({ createPage, edges }) {
       },
     });
   }
+}
+
+function createParticipantsPages({ createPage, edges }) {
+  const participantTemplate = path.resolve('src/templates/ParticipantTemplate.js');
+
+  edges.forEach(({ node }) => {
+    const { participantId } = node.fields;
+
+    createPage({
+      path: `/sobre/${participantId}`,
+      component: participantTemplate,
+      context: {
+        participantId
+      },
+    });
+  });
 }
