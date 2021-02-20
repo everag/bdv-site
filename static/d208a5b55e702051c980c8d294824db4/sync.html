@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- saved from url=(0227)https://pippio.com/api/sync?pid=1391&ref=&it=1&iv=c6ceb9naj2lhsn&it=4&iv=9f385e214ff2bfc5a8e050ebae4894d5&it=4&iv=25fecae9671954be00e4ce441a539900b1787641&it=4&iv=c1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><meta name="referrer" content="no-referrer"><script>
+		var f = function () {
+	function loadChains(chains, limit, onChainDone) {
+    function newImageLoader(url) {
+        return function () {
+            var e = new Image();
+            addListeners(e);
+            e.src = url;
+        };
+    }
+
+    function newScriptLoader(url) {
+        return function () {
+            var e = document.createElement('script');
+            e.type = 'text/javascript';
+            e.async = true;
+            addListeners(e);
+            e.src = url;
+            document.head.appendChild(e);
+        };
+    }
+
+    function newIframeLoader(url) {
+        return function () {
+            var e = document.createElement('iframe');
+            e.style.display = 'none';
+            e.width = 1;
+            e.height = 1;
+            addListeners(e);
+            e.src = url;
+            document.body.appendChild(e);
+        };
+    }
+
+    function addListeners(e) {
+        addLoadErrorListeners(e, loadNext);
+        if (typeof onChainDone === 'function') {
+            addLoadErrorListeners(e, onChainDone);
+        }
+    }
+
+    function addLoadErrorListeners(e, listener) {
+        if (typeof e.addEventListener === 'function') {
+            e.addEventListener('load', listener, false);
+            e.addEventListener('error', listener, false);
+        } else if (typeof e.attachEvent === 'function') {
+            e.attachEvent('onload', listener);
+            e.attachEvent('onerror', listener);
+        }
+    }
+
+    function loadNext() {
+        var next = loaders.shift();
+        if (typeof next === "function") {
+            setTimeout(next);
+        }
+    }
+
+    var loaders = chains.reduce(function (acc, value) {
+        var mode = value[0];
+        var url = value[1];
+
+        switch (mode) {
+            case 'image':
+                acc.push(newImageLoader(url));
+                break;
+            case 'script':
+                acc.push(newScriptLoader(url));
+                break;
+            case 'iframe':
+                acc.push(newIframeLoader(url));
+                break;
+        }
+        return acc;
+    }, []);
+
+    for (var i = 0; i < limit; i++) {
+        loadNext();
+    }
+}
+
+	var chains = [];
+	chains.push(['image', 'https://ei.rlcdn.com/448046.gif?n\x3D1\x26partner_site_id\x3D1017\x26cparams\x3Dplacement%3D1391\x26m\x3D9f385e214ff2bfc5a8e050ebae4894d5\x26s\x3D25fecae9671954be00e4ce441a539900b1787641\x26s256\x3Dc1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c']);
+	chains.push(['image', 'https://e.dlx.addthis.com/e/a-1137/s-7715?ret\x3Dimg\x26na_em\x3D25fecae9671954be00e4ce441a539900b1787641\x26na_ci\x3DCtwI_DKNmx3WE699dDUDNSIBLw\x26na_sp\x3D1017']);
+	chains.push(['image', 'https://aa.agkn.com/adscores/s.pixel?sid\x3D9102279158\x26lsid\x3D1017\x26em\x3D9f385e214ff2bfc5a8e050ebae4894d5\x26lsid\x3D1017\x26em\x3D25fecae9671954be00e4ce441a539900b1787641']);
+	chains.push(['image', 'https://widget.criteo.com/event?a\x3D40136\x26v\x3D4.1.0\x26p0\x3De%3Dce%26m%3D%255B9f385e214ff2bfc5a8e050ebae4894d5%255D\x26rt\x3Dgif']);
+	chains.push(['image', 'https://login.dotomi.com/ucm/UCMController?dtm_com\x3D29\x26dtm_fid\x3D103\x26dtm_cid\x3D3167\x26dtm_cmagic\x3D20c86a\x26dtm_format\x3D6\x26cli_promo_id\x3D110\x26dtmc_pub_id\x3D1017\x26dtm_email_hash\x3D9f385e214ff2bfc5a8e050ebae4894d5']);
+	chains.push(['image', 'https://tr.snapchat.com/cs/r?u_hem\x3Dc1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c\x26u_hems\x3D%5B%7B%22u_hem%22%3A%22c1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c%22%2C%22pub_id%22%3A%221017%22%7D%5D\x26qs\x3D1']);
+	chains.push(['image', 'https://tag.apxlv.com/tag/partner/167?pixel_mode\x3Dpixel\x26md5\x3D9f385e214ff2bfc5a8e050ebae4894d5\x26pid\x3D1017\x26s\x3Dc1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c\x26pid\x3D1017']);
+	chains.push(['image', 'https://tag.yieldoptimizer.com/ps/ps?t\x3Di\x26p\x3D4514\x26sha256\x3Dc1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c\x26sha1\x3D25fecae9671954be00e4ce441a539900b1787641\x26md5\x3D9f385e214ff2bfc5a8e050ebae4894d5']);
+	chains.push(['image', 'https://tr.snapchat.com/cs/r?u_hem\x3Dc1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c\x26u_hems\x3D%5B%7B%22u_hem%22%3A%22c1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c%22%2C%22pub_id%22%3A%221017%22%7D%5D']);
+	chains.push(['image', 'https://idx.listrakbi.com/1/xv3sl1/pixel.gif?v\x3D1\x26md5\x3D9f385e214ff2bfc5a8e050ebae4894d5\x26sha1\x3D25fecae9671954be00e4ce441a539900b1787641\x26sha256\x3Dc1c5aa2a277dedee11ef01d313ca9299845450473c3acc2ce039f0b54cf1ae1c']);
+	chains.push(['image', 'https://tag.apxlv.com/tag/partner/222?pixel_mode\x3Dpixel']);
+	chains.push(['image', 'https://p.adsymptotic.com/d/px?_pid\x3D13553\x26_psign\x3D9e62e5c043ecadc9479a0ccac401dd7d']);
+	chains.push(['image', 'https://rc.rlcdn.com/456809.gif?n\x3D1\x26cparams\x3Dplacement%3D1391']);
+	chains.push(['image', 'https://rc.rlcdn.com/456809.gif?n\x3D2\x26cparams\x3Dplacement%3D1391']);
+	chains.push(['image', 'https://rc.rlcdn.com/456809.gif?n\x3D3\x26cparams\x3Dplacement%3D1391']);
+
+	loadChains(chains, 10, (typeof onDone === "function") ? onDone : null);
+		};
+
+		if (document.body) { f(); } else { document.addEventListener('DOMContentLoaded', f); }
+	</script>
+</head><body></body></html>
